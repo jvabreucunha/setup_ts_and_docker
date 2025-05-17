@@ -34,23 +34,6 @@ Você pode clonar ou usar como template diretamente para iniciar seu próximo pr
 
 ---
 
-## 🧰 Estrutura de Pastas
-
-.
-├── src/ # Código-fonte TypeScript
-│ └── index.ts # Arquivo principal
-├── .dockerignore
-├── .eslintrc.json
-├── .gitignore
-├── docker-compose.yml
-├── Dockerfile
-├── package.json
-├── tsconfig.json
-└── README.md
-
-
----
-
 ## 🚀 Como usar
 
 ### ✅ Pré-requisitos
@@ -67,7 +50,7 @@ docker-compose up --build
 
 ### A aplicação estará disponível em http://localhost:3000
 
-##📄 Scripts disponíveis
+## 📄 Scripts disponíveis
 - npm run dev — roda com ts-node-dev
 
 - npm run build — compila TypeScript em JavaScript
