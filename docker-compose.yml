@@ -2,20 +2,23 @@ version: '3'
 services:
     api:
         image: dockernode
-        container_name: "app"
+        container_name: 'app'
         ports:
-            - '3000:3000'
+            - '${PORT}:3000'
+        depends_on:
+            - db
         links:
-            - link-db
+            - db
         volumes:
-            - ./:/usr/src/app
-    link-db:
-        image: "postgres"
-        container_name: "postgres"
+            - ./:/usr/src
+        working_dir: /usr/src/
+    db:
+        image: postgis/postgis:16-3.4
+        container_name: 'postgres'
         volumes:
             - ./postgres:/var/lib/postgres
         ports:
-            - "${DB_PORT}:5432"
+            - '${DB_PORT}:5432'
         environment:
             - POSTGRES_USER=${DB_USER}
             - POSTGRES_DB=${DB_NAME}

@@ -27,6 +27,7 @@
     "typescript-eslint": "^8.32.0"
   },
   "dependencies": {
+    "@types/geojson": "^7946.0.16",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "pg": "^8.16.0",
