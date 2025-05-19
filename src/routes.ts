@@ -1,8 +1,9 @@
+import StoreController from './controllers/store.controller';
 import express from 'express';
-const routes = express.Router();
+const router = express.Router();
 
-routes.get('/', (req, res) => {
-    res.send('Olá Mundo!');
-});
+router.post('/stores', StoreController.create)
+router.get('/stores', StoreController.findAll)
+router.get('/stores/:id', StoreController.findById)
 
-export default routes;
+export default router;

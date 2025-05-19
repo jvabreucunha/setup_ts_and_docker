@@ -1,5 +1,5 @@
 import express from 'express';
-import routes from './routes';
+import router from './routes';
 import dontenv from 'dotenv';
 import { sequelize } from './config/database';
 
@@ -9,8 +9,7 @@ const app = express();
 const PORT = process.env.PORT;
 
 app.use(express.json());
-app.use(routes);
-
+app.use(router);
 
 sequelize
     .sync()

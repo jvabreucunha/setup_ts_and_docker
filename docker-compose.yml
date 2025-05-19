@@ -16,10 +16,12 @@ services:
         image: postgis/postgis:16-3.4
         container_name: 'postgres'
         volumes:
-            - ./postgres:/var/lib/postgres
+            - pgdata:/var/lib/postgresql/data
         ports:
             - '${DB_PORT}:5432'
         environment:
             - POSTGRES_USER=${DB_USER}
             - POSTGRES_DB=${DB_NAME}
             - POSTGRES_PASSWORD=${DB_PASSWORD}
+volumes:
+    pgdata:
